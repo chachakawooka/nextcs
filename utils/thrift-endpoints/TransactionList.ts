@@ -3,7 +3,7 @@ import { gql } from "apollo-server-micro";
 import {
   TransactionsGetResult,
   SealedTransaction,
-} from "../../thrift/api_types";
+} from "../../src/thrift/api_types";
 import bs58 from "bs58";
 
 export const TransactionListTypeDefs = gql`

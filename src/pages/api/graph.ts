@@ -3,10 +3,12 @@ import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-co
 import { makeExecutableSchema } from "@graphql-tools/schema";
 import { merge } from "lodash";
 import type { NextApiRequest, NextApiResponse } from "next";
+import NextCors from "nextjs-cors";
+
 import {
   TransactionListTypeDefs,
   TransactionListResolvers,
-} from "../../utils/thrift-endpoints";
+} from "../../../utils/thrift-endpoints";
 
 const schema = makeExecutableSchema({
   typeDefs: [TransactionListTypeDefs],
@@ -14,6 +16,7 @@ const schema = makeExecutableSchema({
 });
 
 const apolloServer: ApolloServer = new ApolloServer({
+  introspection: true,
   schema,
   plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
 });
@@ -24,6 +27,12 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  await NextCors(req, res, {
+    // Options
+    methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
+    origin: "*",
+    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  });
   await startServer;
   await apolloServer.createHandler({
     path: "/api/graph",

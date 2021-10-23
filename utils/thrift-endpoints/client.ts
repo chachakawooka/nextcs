@@ -1,4 +1,4 @@
-import API from "../../thrift/API";
+import API from "../../src/thrift/API";
 import thrift from "thrift";
 
 const getClient = () => {
