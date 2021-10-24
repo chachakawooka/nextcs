@@ -5,6 +5,8 @@ import Moment from "react-moment";
 import { useState } from "react";
 import { useQuery } from "@apollo/client";
 import { TRANSACTIONS_QUERY } from "../../queries/transactions";
+import Link from "next/link";
+
 import {
   TransactionListVariables,
   TransactionList as TransactionListType,
@@ -52,6 +54,11 @@ export const TransactionList = ({}: Props) => {
       property: "id",
       header: <Text>ID</Text>,
       primary: true,
+      render: (data: TransactionList_getTransactionList) => (
+        <Text color="neutral-2">
+          <Link href={`/transactions/${data.id}`}>{data.id}</Link>
+        </Text>
+      ),
     },
     {
       property: "type",

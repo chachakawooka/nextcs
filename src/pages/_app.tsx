@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Anchor
             href="https://www.credits.com/"
             icon={<Money color="brand" />}
-            label="NextCS - Credits Started for Next JS"
+            label="NextCS - Credits Starter for Next JS"
           />
         </Header>
         <Box pad="medium" background="dark-1">
