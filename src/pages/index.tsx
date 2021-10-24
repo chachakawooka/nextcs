@@ -1,9 +1,17 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
+
+import { Main } from "grommet";
+
+import { TransactionList } from "../components/TransactionList";
 
 const Home: NextPage = () => {
-  return <div>Kitchen Sink</div>;
+  return (
+    <>
+      <Main>
+        <TransactionList />
+      </Main>
+    </>
+  );
 };
 
 export default Home;

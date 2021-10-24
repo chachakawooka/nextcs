@@ -15,10 +15,11 @@ export interface TransactionList_getTransactionList {
   timestamp: string | null;
   amount: number | null;
   fee: number | null;
+  type: string | null;
 }
 
 export interface TransactionList {
-  getTransactionList: TransactionList_getTransactionList[];
+  getTransactionList: (TransactionList_getTransactionList | null)[] | null;
 }
 
 export interface TransactionListVariables {

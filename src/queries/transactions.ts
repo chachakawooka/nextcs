@@ -9,6 +9,7 @@ export const TRANSACTIONS_QUERY = gql`
       timestamp
       amount
       fee
+      type
     }
   }
 `;

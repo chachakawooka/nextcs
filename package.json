@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "codegen": "thrift/thrift-0.15.0.exe -r --out thrift --gen js:node,ts,es6,with_ns thrift/api.thrift",
+    "apollo-schema": "npx apollo service:download --endpoint=http://localhost:3000/api/graph graphql-schema.json",
     "apollo-codegen": "npx apollo codegen:generate --localSchemaFile=graphql-schema.json --target=typescript --tagName=gql",
     "storybook": "start-storybook -p 6006"
   },
@@ -19,11 +20,13 @@
     "grommet": "^2.18.0",
     "lodash": "^4.17.21",
     "micro": "^9.3.4",
+    "moment": "^2.29.1",
     "next": "11.1.2",
     "nextjs-cors": "^2.0.0",
     "polished": "^4.1.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-moment": "^1.1.1",
     "styled-components": "^5.3.3",
     "thrift": "^0.15.0"
   },
