@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { Grommet, Box, Anchor, Header, Footer, Text } from "grommet";
+import Link from "next/link";
+import { Grommet, Box, Anchor, Header, Footer, Text, Nav } from "grommet";
 import { Money, UserManager } from "grommet-icons";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import { theme } from "../styles/theme";
@@ -16,10 +17,14 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Grommet theme={theme}>
         <Header background="light-4" pad="medium" height="xsmall">
           <Anchor
-            href="https://www.credits.com/"
+            href="/"
             icon={<Money color="brand" />}
             label="NextCS - Credits Starter for Next JS"
           />
+          <Nav direction="row">
+            <Link href="/">Home</Link>
+            <Link href="/transactions">Transactions</Link>
+          </Nav>
         </Header>
         <Box pad="medium" background="dark-1">
           <Component {...pageProps} />

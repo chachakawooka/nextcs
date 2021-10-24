@@ -40,6 +40,7 @@
     "@types/graphql": "^14.5.0",
     "@types/lodash": "^4.14.176",
     "@types/react": "17.0.31",
+    "@types/styled-components": "^5.1.15",
     "@types/thrift": "^0.10.11",
     "eslint": "8.0.1",
     "eslint-config-next": "11.1.2",
