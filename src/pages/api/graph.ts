@@ -7,12 +7,14 @@ import NextCors from "nextjs-cors";
 
 import {
   TransactionListTypeDefs,
+  TransactionTypeDefs,
   TransactionListResolvers,
+  TransactionResolvers,
 } from "../../../utils/thrift-endpoints";
 
 const schema = makeExecutableSchema({
-  typeDefs: [TransactionListTypeDefs],
-  resolvers: merge(TransactionListResolvers),
+  typeDefs: [TransactionListTypeDefs, TransactionTypeDefs],
+  resolvers: merge(TransactionListResolvers, TransactionResolvers),
 });
 
 const apolloServer: ApolloServer = new ApolloServer({
