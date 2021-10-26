@@ -48,7 +48,7 @@ export const TransactionDataTable = ({ items, onMore }: Props) => {
         <>
           <Box width="small">
             <Text truncate="true" tip={data.from} color="neutral-2">
-              <Link href={`/wallets/${data.from}`}> {data.from}</Link>
+              <Link href={`/wallets/${data.from}`}>{data.from}</Link>
             </Text>
           </Box>
         </>
