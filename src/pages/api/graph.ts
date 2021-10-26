@@ -10,11 +10,17 @@ import {
   TransactionTypeDefs,
   TransactionListResolvers,
   TransactionResolvers,
+  WalletTypeDefs,
+  WalletResolvers,
 } from "../../../utils/thrift-endpoints";
 
 const schema = makeExecutableSchema({
-  typeDefs: [TransactionListTypeDefs, TransactionTypeDefs],
-  resolvers: merge(TransactionListResolvers, TransactionResolvers),
+  typeDefs: [TransactionListTypeDefs, TransactionTypeDefs, WalletTypeDefs],
+  resolvers: merge(
+    TransactionListResolvers,
+    TransactionResolvers,
+    WalletResolvers
+  ),
 });
 
 const apolloServer: ApolloServer = new ApolloServer({

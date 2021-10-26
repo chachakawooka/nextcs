@@ -2,30 +2,30 @@ import { Box, Spinner } from "grommet";
 
 import { useState } from "react";
 import { useQuery } from "@apollo/client";
-import { TRANSACTIONS_QUERY } from "../../queries/transactions";
+import { WALLET_TRANSACTIONS_QUERY } from "../../queries/wallets";
 
 import {
-  TransactionListVariables,
-  TransactionList as TransactionListType,
-  TransactionList_getTransactionList,
-} from "../../queries/__generated__/TransactionList";
+  getWalletTransactionList,
+  getWalletTransactionList_getTransactionList,
+  getWalletTransactionListVariables,
+} from "../../queries/__generated__/getWalletTransactionList";
 
 import { TransactionDataTable } from "./TransactionDataTable";
 
-type Props = {};
+type Props = { pubKey: string };
 
-export const TransactionList = ({}: Props) => {
+export const WalletTransactionList = ({ pubKey }: Props) => {
   const [items, setItems] = useState<
-    (TransactionList_getTransactionList | null)[]
+    (getWalletTransactionList_getTransactionList | null)[]
   >([]);
 
   const [gridLoading, setGridLoading] = useState(false);
 
   const { data, fetchMore, loading, error } = useQuery<
-    TransactionListType,
-    TransactionListVariables
-  >(TRANSACTIONS_QUERY, {
-    variables: { offset: 0, limit: 100 },
+    getWalletTransactionList,
+    getWalletTransactionListVariables
+  >(WALLET_TRANSACTIONS_QUERY, {
+    variables: { pubKey, offset: 0, limit: 100 },
   });
 
   if (loading) return <>Loading...</>;

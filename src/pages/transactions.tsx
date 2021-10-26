@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 
 import { Main } from "grommet";
 
-import { TransactionList } from "../components/TransactionList";
+import { TransactionList } from "../components/TransactionList/TransactionList";
 
 const Transactions: NextPage = () => {
   return (

@@ -12,8 +12,10 @@ This project aims to achieve adoption of the [Credits Blockchain](https://www.cr
   - checkout the [graphql playground](https://nextcs.vercel.app/api/graph)
 - Prebuilt components
   - [transaction lists](/transactions)
-- Prebuilt Page
+    - transaction list for wallets
+- Prebuilt Pages
   - view a transaction
+  - view a walllet
 - Storybook for testing components
 - Grommet Components for UI/UX
 

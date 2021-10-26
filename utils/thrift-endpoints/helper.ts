@@ -1,4 +1,4 @@
-import { SealedTransaction } from "../../src/thrift/api_types";
+import { SealedTransaction, WalletData } from "../../src/thrift/api_types";
 import bs58 from "bs58";
 
 export const cleanTransaction = (transaction: SealedTransaction) => {
@@ -14,6 +14,17 @@ export const cleanTransaction = (transaction: SealedTransaction) => {
     timestamp: transaction.trxn.timeCreation,
     fee: transaction.trxn.fee.commission,
     type: getType(transaction.trxn.type),
+  };
+};
+
+export const cleanWallet = (wallet: WalletData) => {
+  let amount = wallet.balance.integral ?? 0;
+  amount = amount + convertFraction(wallet?.balance?.fraction?.buffer);
+
+  return {
+    id: wallet.walletId,
+    balance: amount,
+    lastTransactionId: wallet.lastTransactionId,
   };
 };
 
