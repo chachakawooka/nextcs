@@ -30,7 +30,7 @@ export const WalletTransactionList = ({ pubKey }: Props) => {
 
   if (loading) return <>Loading...</>;
   if (error) return <pre>{error.message}</pre>;
-  const newItems = data?.getTransactionList;
+  const newItems = data?.getWalletTransactionList;
   if (items.length === 0 && newItems) setItems(newItems);
 
   const onMore = async () => {
@@ -39,8 +39,8 @@ export const WalletTransactionList = ({ pubKey }: Props) => {
       variables: { offset: items.length, limit: 100 },
       updateQuery: (previousResult, { fetchMoreResult }) => {
         if (!fetchMoreResult) return previousResult;
-        if (fetchMoreResult && fetchMoreResult.getTransactionList) {
-          setItems([...items, ...fetchMoreResult.getTransactionList]);
+        if (fetchMoreResult && fetchMoreResult.getWalletTransactionList) {
+          setItems([...items, ...fetchMoreResult.getWalletTransactionList]);
           setGridLoading(false);
         }
         return fetchMoreResult;

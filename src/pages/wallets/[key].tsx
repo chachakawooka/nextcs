@@ -28,8 +28,9 @@ const Wallet = ({ wallet }: Data) => {
         </Heading>
         <Text>{wallet.balance} CS</Text>
       </Box>
-      <Heading level="2">Transactions</Heading>
-      <Box align="center" pad="large">
+
+      <Box align="center" pad="medium">
+        <Heading level="2">Transactions</Heading>
         <WalletTransactionList pubKey={key ? key.toString() : ""} />
       </Box>
     </Box>

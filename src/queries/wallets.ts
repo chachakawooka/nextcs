@@ -12,7 +12,7 @@ export const WALLET_QUERY = gql`
 
 export const WALLET_TRANSACTIONS_QUERY = gql`
   query getWalletTransactionList($pubKey: String, $offset: Int, $limit: Int) {
-    getTransactionList(pubKey: $pubKey, offset: $offset, limit: $limit) {
+    getWalletTransactionList(pubKey: $pubKey, offset: $offset, limit: $limit) {
       id
       from
       to

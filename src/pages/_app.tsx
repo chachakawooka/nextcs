@@ -3,9 +3,13 @@ import type { AppProps } from "next/app";
 import Link from "next/link";
 import { Grommet, Box, Anchor, Header, Footer, Text, Nav } from "grommet";
 import { Money, UserManager } from "grommet-icons";
-import { ApolloProvider } from "@apollo/client";
+import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import { theme } from "../styles/theme";
-import { client } from "../utils/apollo";
+
+export const client = new ApolloClient({
+  uri: "/api/graph",
+  cache: new InMemoryCache(),
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

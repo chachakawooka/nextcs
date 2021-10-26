@@ -19,7 +19,9 @@ export interface getWalletTransactionList_getTransactionList {
 }
 
 export interface getWalletTransactionList {
-  getTransactionList: (getWalletTransactionList_getTransactionList | null)[] | null;
+  getWalletTransactionList:
+    | (getWalletTransactionList_getTransactionList | null)[]
+    | null;
 }
 
 export interface getWalletTransactionListVariables {
