@@ -13,3 +13,17 @@ export const TRANSACTIONS_QUERY = gql`
     }
   }
 `;
+
+export const TRANSACTION_QUERY = gql`
+  query Transaction($poolSeq: Int, $index: Int) {
+    getTransaction(poolSeq: $poolSeq, index: $index) {
+      id
+      from
+      to
+      timestamp
+      amount
+      fee
+      type
+    }
+  }
+`;

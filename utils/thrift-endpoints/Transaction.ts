@@ -15,7 +15,7 @@ export const TransactionTypeDefs = gql`
   }
 
   type Query {
-    getTransaction(poolSeq: Int, index: Int): [Transaction]
+    getTransaction(poolSeq: Int, index: Int): Transaction
   }
 `;
 
@@ -23,9 +23,9 @@ export const TransactionResolvers = {
   Query: {
     getTransaction: async (_root: any, args: any) => {
       const client = getClient();
-      let returnValue: any[] = [];
+      let returnValue: any = {};
       await client.TransactionGet(args).then((res: TransactionGetResult) => {
-        returnValue.push(cleanTransaction(res.transaction));
+        returnValue = cleanTransaction(res.transaction);
       });
       return returnValue;
     },
