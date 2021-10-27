@@ -12,18 +12,23 @@ This project aims to achieve adoption of the [Credits Blockchain](https://www.cr
   - checkout the [graphql playground](https://nextcs.vercel.app/api/graph)
 - Prebuilt components
   - [transaction lists](/transactions)
-    - transaction list for wallets
+  - [transaction list for wallets](/wallets/CVVv2RE8hBHGwLGxMnzfSk9Y5uJGojPFkkEGLJ99dF1t)
 - Prebuilt Pages
   - view a transaction
-  - view a walllet
+  - view a wallet
 - Storybook for testing components
 - Grommet Components for UI/UX
 
 ### To Do
 
-- Send Transaction
-- Send Smart Contract Transaction
+- View Wallet List
+- Additional Wallet Info
+  - Delegation
+- Send Transactions
+- Token & Contract Viewing
 - Smart Contract Deployment
+  - the idea is to do this in typescript and have it convert to Java on before deploy
+-
 
 ## Getting Started
 
