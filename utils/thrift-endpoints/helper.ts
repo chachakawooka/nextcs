@@ -149,7 +149,7 @@ const fee_to_double = (fee: any) => {
   ];
   const sign = fee / 32768 != 0 ? 1 : -1;
   const fee_double_ =
-    parseFloat((sign * (fee % 1024) * 1) / 1024) *
+    ((sign * (fee % 1024) * 1) / 1024) *
     kTensPows[Math.floor((fee % 32768) / 1024)];
   return fee_double_.toFixed(17); // toFixed(17) is to avoid rounding errors
 };
