@@ -1,9 +1,10 @@
 import { useRouter } from "next/router";
 import { gql } from "@apollo/client";
-import { Box, Grid, Heading, Text } from "grommet";
+import { Box, Grid, Heading, Text, Card } from "grommet";
 import { GetServerSideProps } from "next";
 import { WALLET_QUERY, WALLET_TRANSACTIONS_QUERY } from "../../queries/wallets";
 import { client } from "../../utils/apollo";
+import { Money } from "grommet-icons";
 
 import { getWallet_getWallet } from "../../queries/__generated__/getWallet";
 
@@ -22,12 +23,15 @@ const Wallet = ({ wallet }: Data) => {
       <Heading level={1} textAlign="center" fill>
         Account: {key}
       </Heading>
-      <Box align="left">
-        <Heading level="2" size="small">
-          Balance
-        </Heading>
-        <Text>{wallet.balance} CS</Text>
-      </Box>
+      <Grid gap="medium" columns="small">
+        <Card background="dark-2" pad="medium" align="center">
+          <Money size="large" />
+          <Heading level="2" size="small">
+            Balance
+          </Heading>
+          <Text>{wallet.balance} CS</Text>
+        </Card>
+      </Grid>
 
       <Box align="center" pad="medium">
         <Heading level="2">Transactions</Heading>
