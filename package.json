@@ -20,7 +20,7 @@
     "grommet": "^2.18.0",
     "lodash": "^4.17.21",
     "micro": "^9.3.4",
-    "moment": "^2.29.1",
+    "moment": "^2.29.4",
     "next": "11.1.2",
     "nextjs-cors": "^2.0.0",
     "polished": "^4.1.3",
